@@ -1,0 +1,10 @@
+imageio
+numpy
+opencv-contrib-python
+pillow
+scipy
+pyyaml
+matplotlib
+scikit-image
+flask
+flask_cors
