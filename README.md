@@ -4,12 +4,15 @@ A tool for easily labeling 6D object poses in multi-view RBJ images.
 ![Screenshot](docs/images/screenshot.png)
 
 ## Usage
+
 See [this video](https://youtu.be/qvZfD38i7ro) for detailed usage instructions.
 
 The tool can be used to label datasets using the [BOP format](https://github.com/thodan/bop_toolkit/blob/master/docs/bop_datasets_format.md), provided that camera pose labels are present, and object pose labels are consistent among different viewpoints. 
 In each scene folder, labeled object poses are stored in the following files:
 * `scene_gt.json`: poses relative to the camera frame, as defined in the BOP format.
 * `scene_gt_world.json`: poses relative to the world frame. This file is not part of the original BOP format.
+
+> Note: Currently image names/models names are hardcoded to have 6 digits, i.e: `000001.png`, `obj_000001.ply`
 
 ## Set-up
 
@@ -18,11 +21,18 @@ The labeling tool consists of two parts:
 * an Angular front-end, used for user interaction and visualization.
 
 ### Back-end
-* Make sure [conda](https://docs.conda.io/en/latest/miniconda.html) is installed.
-* Open a terminal and navigate to the `backend` folder: `cd backend`.
-* Create a new environment: `conda env create -f environment.yml`.
-* Activate the environment: `conda activate dimo-labeling`.
+- Conda:
+  * Make sure [conda](https://docs.conda.io/en/latest/miniconda.html) is installed.
+  * Open a terminal and navigate to the `backend` folder: `cd backend`.
+  * Create a new environment: `conda env create -f environment.yml`.
+  * Activate the environment: `conda activate dimo-labeling`.
+- Pip (preferably in a virtual environment):
+  * `pip3 install -r requirements.txt`
 * Start the back-end api and pass the path to the dataset folder, the name of the folder containing object models and the name of the camera containing scenes: `python api.py --path "<path-to-dataset>" --models_dir "<models-dir-name>" --images_dir "<camera-dir-name>"`.
+```shell
+# Example
+python api.py --path "./sample_bob_dataset" --models_dir "models" --images_dir "train"
+```
 
 ### Front-end
 * Make sure [nodejs](https://nodejs.org/en/download/) is installed.
