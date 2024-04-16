@@ -41,7 +41,7 @@ python api.py --path "./sample_bob_dataset" --models_dir "models" --images_dir "
 * Install the correct node version: `nvm install`.
 * Activate the correct node version: `nvm use`.
 * Install the necessary node packages: `npm install --save-dev`.
-* Build and serve the app: `ng serve`.
+* Build and serve the app: `npm run start`.
 * Open a browser on `http://localhost:4200/` to open the app.
 
 ### Advanced Options
