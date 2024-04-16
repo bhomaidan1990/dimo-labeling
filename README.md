@@ -1,6 +1,6 @@
 # Dataset of Industrial Metal Objects Labeling Tool
 
-A tool for easily labeling 6D object poses in multi-view RBJ images. 
+A tool for easily labeling 6D object poses in multi-view RGB images. 
 ![Screenshot](docs/images/screenshot.png)
 
 ## Usage
